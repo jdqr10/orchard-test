@@ -1,37 +1,67 @@
 <template>
-  <head>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
-  </head>
-  <div class="hello">
-    <div class="three-columns">
-      <div class="column"><img alt="Vue logo" src="./img/Image-01.jpg"></div>
-      <div class="column"><img alt="Vue logo" src="./img/Image-02.jpg"><img class="img3" alt="Vue logo" src="./img/Image-03.jpg"></div>
-      <div class="column-right">
-        <div class="up">
-          <h2 class="comp_1_title">ANSWER YOUR BODY'S NEEDS</h2>
-          <hr>
-          <p class="paragraph1">
-            The way ingredients are sourced affects the way we nourish our bodies. Author Mark Schatzer believes our body naturally develops an appetite for the food and the nutrients it needs to be healthy, but artificial
-            flavorings are getting in the way. This can be reversed by focusing on high-quality ingredients and being mindful as your appetite guides you to consume according to your body's needs.
-          </p>
+  <div>
+    <head>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+    </head>
+    <div class="hello">
+      <div class="three-columns">
+        <div class="column">
+          <img alt="Vue logo" src="./img/Image-01.jpg" @click="openModal('./img/Image-01.jpg')">
         </div>
-        <div class="down">
-          <h3 class="be_mindful">BE MINDFUL</h3>
-          <p class="paragraph2"><strong>Sourcing local or organic foof is a good way to start being more mindful about what you're cooking and esating.</strong></p>
+        <div class="column">
+          <img alt="Vue logo" src="./img/Image-02.jpg" @click="openModal('./img/Image-02.jpg')">
+          <img class="img3" alt="Vue logo" src="./img/Image-03.jpg" @click="openModal('./img/Image-03.jpg')">
         </div>
+        <div class="column-right">
+          <div class="up">
+            <h2 class="comp_1_title">ANSWER YOUR BODY'S NEEDS</h2>
+            <hr>
+            <p class="paragraph1">
+              The way ingredients are sourced affects the way we nourish our bodies. Author Mark Schatzer believes our body naturally develops an appetite for the food and the nutrients it needs to be healthy, but artificial
+              flavorings are getting in the way. This can be reversed by focusing on high-quality ingredients and being mindful as your appetite guides you to consume according to your body's needs.
+            </p>
+          </div>
+          <div class="down">
+            <h3 class="be_mindful">BE MINDFUL</h3>
+            <p class="paragraph2"><strong>Sourcing local or organic food is a good way to start being more mindful about what you're cooking and eating.</strong></p>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div v-if="isModalVisible" class="modal" @click="closeModal">
+        <img :src="currentImage" class="modal-content" @click.stop>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    // check status to hide or show modal
+    return {
+      isModalVisible: false,
+      currentImage: ''
+    };
+  },
+  methods: {
+    //methods for the modal
+    openModal(imageSrc) {
+      this.currentImage = imageSrc;
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    }
   }
 }
 </script>
+
 
 <style scoped>
 .hello {
@@ -111,6 +141,36 @@ h3 {
   line-height: 1.5;
   font-weight: 300;
   letter-spacing: 0.01em;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border: 2px solid white;
+}
+
+.modal img {
+  cursor: pointer;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 80%;
+    max-height: 80%;
+  }
 }
 
 /* Responsive Design */
