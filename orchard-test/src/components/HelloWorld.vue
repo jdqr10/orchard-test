@@ -6,11 +6,11 @@
     <div class="hello">
       <div class="three-columns">
         <div class="column">
-          <img alt="Vue logo" src="./img/Image-01.jpg" @click="openModal('./img/Image-01.jpg')">
+          <img alt="Vue logo" src="./img/Image-01.jpg" @click="openModal('./src/components/img/Image-01.jpg')">
         </div>
         <div class="column">
-          <img alt="Vue logo" src="./img/Image-02.jpg" @click="openModal('./img/Image-02.jpg')">
-          <img class="img3" alt="Vue logo" src="./img/Image-03.jpg" @click="openModal('./img/Image-03.jpg')">
+          <img alt="Vue logo" src="./img/Image-02.jpg" @click="openModal2('./img/Image-02.jpg')">
+          <img class="img3" alt="Vue logo" src="./img/Image-03.jpg" @click="openModal3('./img/Image-03.jpg')">
         </div>
         <div class="column-right">
           <div class="up">
@@ -27,9 +27,15 @@
           </div>
         </div>
       </div>
-      <!-- Modal -->
+      <!-- Modals -->
       <div v-if="isModalVisible" class="modal" @click="closeModal">
-        <img :src="currentImage" class="modal-content" @click.stop>
+        <img src="./img/Image-01.jpg" class="modal-content" @click.stop>
+      </div>
+      <div v-if="isModalVisible2" class="modal" @click="closeModal">
+        <img src="./img/Image-02.jpg" class="modal-content" @click.stop>
+      </div>
+      <div v-if="isModalVisible3" class="modal" @click="closeModal">
+        <img src="./img/Image-03.jpg" class="modal-content" @click.stop>
       </div>
     </div>
   </div>
@@ -46,6 +52,8 @@ export default {
     // check status to hide or show modal
     return {
       isModalVisible: false,
+      isModalVisible2: false,
+      isModalVisible3: false,
       currentImage: ''
     };
   },
@@ -55,8 +63,19 @@ export default {
       this.currentImage = imageSrc;
       this.isModalVisible = true;
     },
+    openModal2(imageSrc) {
+      this.currentImage = imageSrc;
+      this.isModalVisible2 = true;
+    },
+    openModal3(imageSrc) {
+      this.currentImage = imageSrc;
+      this.isModalVisible3 = true;
+    },
     closeModal() {
       this.isModalVisible = false;
+      this.isModalVisible2 = false;
+      this.isModalVisible3 = false;
+      this.currentImage = '';
     }
   }
 }
