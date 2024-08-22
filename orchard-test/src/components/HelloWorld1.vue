@@ -1,35 +1,37 @@
 <template>
-  <div class="hello" style="border: 2px solid yellow;">
-    <div class="div" style="border: 2px solid pink">
-      <h1>ALL THE LATEST FROM AEG</h1>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+  </head>
+  <div class="hello">
+    <div class="div">
+      <h1 class="latest">ALL THE LATEST FROM AEG</h1>
       <div class="recipes">
-        <div class="card" style="border: 2px solid blue">
-          <img style="border-bottom: 4px solid red;" alt="Vue logo" src=".\img2\Image-01.jpg">
+        <div class="card">
+          <img alt="Vue logo" src="./img2/Image-01.jpg">
           <div class="info1">
-            <h2>Summer Lunch Menu Mark Best</h2>
-          <p>AEG ambasssador Mark Best's summer eats are guarnteed to help you make the most of the warner amnd enteranting at home</p>
-          <a href="">READ MORE</a>
+            <h2 class="subtitles">Summer Lunch Menu Mark Best</h2>
+            <p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home.</p>
+            <a href="#">READ MORE</a>
           </div>
         </div>
-        <div class="card" style="border: 2px solid blue">
-          <img style="border-bottom: 4px solid red;" alt="Vue logo" src=".\img2\Image-02.jpg">
+        <div class="card">
+          <img alt="Vue logo" src="./img2/Image-02.jpg">
           <div class="info">
-            <h2>A Traditional Chrismas Eve, Mark Best Style</h2>
-          <p>AEG ambasssador Mark Best's summer eats are guarnteed to help you make the most of the warner amnd enteranting at home</p>
-          <a href="">READ MORE</a>
+            <h2 class="subtitles">A Traditional Christmas Eve, Mark Best Style</h2>
+            <p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home.</p>
+            <a href="#">READ MORE</a>
           </div>
         </div>
-        <div class="card" style="border: 2px solid blue">
-          <img style="border-bottom: 4px solid red;" alt="Vue logo" src=".\img2\Image-03.jpg">
+        <div class="card">
+          <img alt="Vue logo" src="./img2/Image-03.jpg">
           <div class="info">
-            <h2>Taking Taste Further</h2>
-          <p>AEG ambasssador Mark Best's summer eats are guarnteed to help you make the most of the warner amnd enteranting at home st of the warner amnd enteranting at home</p>
-          <a href="">READ MORE</a>
+            <h2 class="subtitles">Taking Taste Further</h2>
+            <p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home. Make the most of your cooking with these tips.</p>
+            <a href="#">READ MORE</a>
           </div>
         </div>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -42,45 +44,132 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hello{
-   background-color: #0e0e0e;
-   padding: 130px 100px 100px 140px;
+.hello {
+  background-color: #0e0e0e;
+  padding: 130px 100px 100px 140px;
 }
-h1{
+
+h1 {
   font-size: 38px;
+  color: white; /* Ensure the heading text is visible */
 }
-.recipes{
+
+.recipes {
   display: flex;
- gap: 20px;
- margin-top: 55px;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  gap: 20px;
+  margin-top: 55px;
 }
-.card{
+
+.card {
+  flex: 1 1 calc(33.333% - 20px); /* Three columns with space for gaps */
+  box-sizing: border-box;
+}
+
+.card img {
   width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-bottom: 5px solid red;
 }
 
-h2{
+h2 {
   font-size: 18px;
-}
-.info1{
-  text-align: left;
-  width: 87%;
-  margin-left: 9px;
+  color: white; /* Ensure the text is visible */
 }
 
-.info{
+.info1, .info {
   text-align: left;
   margin-left: 9px;
 }
 
-p{
+p {
   color: gray;
   line-height: 1.5;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 20px;
 }
 
-a{
+a {
   color: white;
+  text-decoration: none; /* Remove underline */
+  border-bottom: 2px solid red; /* Red line below the link */
+  padding-bottom: 2px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 17px;
 }
 
+.latest{
+  width: 100%;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  font-size: 50px;
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hello {
+    padding: 100px 50px 50px 50px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 20px); /* Two columns on medium screens */
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+  .subtitles{
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+}
+
+@media (max-width: 768px) {
+  .hello {
+    padding: 70px 20px 20px 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .card {
+    flex: 1 1 100%; /* Full width cards on small screens */
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hello {
+    padding: 50px 10px 10px 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
 </style>

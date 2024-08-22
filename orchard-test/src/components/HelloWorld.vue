@@ -1,22 +1,26 @@
 <template>
-  <div class="hello" style="border: 2px solid yellow;">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+  </head>
+  <div class="hello">
     <div class="three-columns">
-      <div class="column"><img alt="Vue logo" src=".\img\Image-01.jpg"> </div>
-      <div class="column"><img alt="Vue logo" src=".\img\Image-02.jpg"> <img class="img3" alt="Vue logo" src=".\img\Image-03.jpg">  </div>
+      <div class="column"><img alt="Vue logo" src="./img/Image-01.jpg"></div>
+      <div class="column"><img alt="Vue logo" src="./img/Image-02.jpg"><img class="img3" alt="Vue logo" src="./img/Image-03.jpg"></div>
       <div class="column-right">
-        <div class="up" style="border: 2px solid purple;">
-          <h2 class="comp_1_title">ANSWER YOWR BODY'S NEEDS</h2>
+        <div class="up">
+          <h2 class="comp_1_title">ANSWER YOUR BODY'S NEEDS</h2>
           <hr>
-          <p class="paragraph1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et sunt quod quae placeat, odio rem ipsum similique nesciunt aperiam iure quidem ipsam omnis consequuntur ipsa iusto laudantium facere vitae accusantium
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, eveniet nulla aliquid maiores veritatis laudantium facilis </p>
+          <p class="paragraph1">
+            The way ingredients are sourced affects the way we nourish our bodies. Author Mark Schatzer believes our body naturally develops an appetite for the food and the nutrients it needs to be healthy, but artificial
+            flavorings are getting in the way. This can be reversed by focusing on high-quality ingredients and being mindful as your appetite guides you to consume according to your body's needs.
+          </p>
         </div>
-          <div class="down" style="border: 2px solid orange;">
-            <h3>BE MINDFUL</h3>
-            <p class="paragraph2"><strong >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit repudiandae obcaecati facilis nisi tempora. </strong></p>
-          </div>
+        <div class="down">
+          <h3 class="be_mindful">BE MINDFUL</h3>
+          <p class="paragraph2"><strong>Sourcing local or organic foof is a good way to start being more mindful about what you're cooking and esating.</strong></p>
+        </div>
       </div>
     </div>
-  
   </div>
 </template>
 
@@ -29,56 +33,154 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hello{
-   background-color: #0e0e0e;
-   padding: 130px 100px 100px 140px;
+.hello {
+  background-color: #0e0e0e;
+  padding: 130px 100px 100px 140px;
 }
+
 .three-columns {
-    display: flex;
-    justify-content: space-between; /* or use 'space-around' or 'space-evenly' for different spacing */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
 }
 
-.column {
-    flex: 1; /* This makes each column take up equal space */
-    padding: 10px;
-    box-sizing: border-box; /* Ensures padding doesn’t affect the width */
-    border: 2px solid green;
+.column, .column-right {
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-h2{
-  font-size: 26px;
-}
-
-.img3{
+.img3 {
   margin-top: 15px;
 }
 
-.down{
+.down {
   text-align: left;
 }
 
-h3{
+h2 {
+  font-size: 26px;
+}
+
+h3 {
   font-size: 15px;
   color: red;
 }
-.paragraph1, .paragraph2{
+
+.be_mindful {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  font-size: 20px;
+}
+
+.paragraph1, .paragraph2 {
   text-align: left;
   font-size: 20px;
   line-height: 1.5;
 }
 
-.column-right{
-  padding: 10px;
-    box-sizing: border-box;
-  border: 2px solid rgb(176, 21, 21);
+.column-right {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  margin-top: -15px;
 }
 
-.comp_1_title{
+.comp_1_title {
   width: 100%;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0.08em;
+  font-size: 30px;
+}
+
+.paragraph1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.paragraph2 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hello {
+    padding: 100px 50px 50px 50px;
+  }
+  
+  .three-columns {
+    flex-direction: column;
+  }
+  
+  .column, .column-right {
+    width: 100%;
+  }
+
+  h2, .comp_1_title {
+    font-size: 24px;
+  }
+
+  h3, .be_mindful {
+    font-size: 18px;
+  }
+
+  .paragraph1, .paragraph2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hello {
+    padding: 70px 20px 20px 20px;
+  }
+  
+  h2, .comp_1_title {
+    font-size: 22px;
+  }
+
+  h3, .be_mindful {
+    font-size: 16px;
+  }
+
+  .paragraph1, .paragraph2 {
+    font-size: 14px;
+  }
+
+  .down {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hello {
+    padding: 50px 10px 10px 10px;
+  }
+  
+  h2, .comp_1_title {
+    font-size: 20px;
+  }
+
+  h3, .be_mindful {
+    font-size: 14px;
+  }
+
+  .paragraph1, .paragraph2 {
+    font-size: 12px;
+  }
+
+  .img3 {
+    margin-top: 10px;
+  }
 }
 </style>
