@@ -4,30 +4,30 @@
   </head>
   <div class="hello">
     <div class="div">
-      <h1 class="latest">ALL THE LATEST FROM AEG</h1>
+      <a @click="handleClick"><h1 class="latest">ALL THE LATEST FROM AEG</h1></a>
       <div class="recipes">
         <div class="card">
-          <img alt="Vue logo" src="./img2/Image-01.jpg">
+          <a @click="handleClick"><img alt="Vue logo" src="./img2/Image-01.jpg"></a>
           <div class="info1">
-            <h2 class="subtitles">Summer Lunch Menu Mark Best</h2>
-            <p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home.</p>
-            <a href="#">READ MORE</a>
+            <a @click="handleClick"><h2 class="subtitles">Summer Lunch Menu Mark Best</h2></a>
+            <a @click="handleClick"><p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home. Make the most of your cooking with these tips.</p></a>
+            <a @click="handleClick">READ MORE</a>
           </div>
         </div>
         <div class="card">
-          <img alt="Vue logo" src="./img2/Image-02.jpg">
+          <a @click="handleClick"><img alt="Vue logo" src="./img2/Image-02.jpg"></a>
           <div class="info">
-            <h2 class="subtitles">A Traditional Christmas Eve, Mark Best Style</h2>
-            <p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home.</p>
-            <a href="#">READ MORE</a>
+            <a @click="handleClick"><h2 class="subtitles">A Traditional Christmas Eve, Mark Best Style</h2></a>
+            <a @click="handleClick"><p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home. Make the most of your cooking with these tips.</p></a>
+            <a @click="handleClick">READ MORE</a>
           </div>
         </div>
         <div class="card">
-          <img alt="Vue logo" src="./img2/Image-03.jpg">
+          <a @click="handleClick"><img alt="Vue logo" src="./img2/Image-03.jpg"></a>
           <div class="info">
-            <h2 class="subtitles">Taking Taste Further</h2>
-            <p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home. Make the most of your cooking with these tips.</p>
-            <a href="#">READ MORE</a>
+            <a @click="handleClick"><h2 class="subtitles">Taking Taste Further</h2></a>
+            <a @click="handleClick"><p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer months and entertain at home. Make the most of your cooking with these tips.</p></a>
+            <a @click="handleClick">READ MORE</a>
           </div>
         </div>
       </div>
@@ -40,6 +40,13 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    // function that output a consol.log() everytime an anchor tag is clicked
+    handleClick(event) {
+      event.preventDefault();
+      console.log('Link clicked:', event.target.innerText);
+    }
   }
 }
 </script>
@@ -70,7 +77,6 @@ h1 {
 .card img {
   width: 100%;
   height: auto; /* Maintain aspect ratio */
-  border-bottom: 5px solid red;
 }
 
 h2 {
