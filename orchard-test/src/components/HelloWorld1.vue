@@ -1,24 +1,35 @@
 <template>
   <div class="hello" style="border: 2px solid yellow;">
-    <div class="three-columns">
-      <div class="column"><img alt="Vue logo" src=".\img\Image-01.jpg"> </div>
-      <div class="column"><img alt="Vue logo" src=".\img\Image-02.jpg"> <img class="img3" alt="Vue logo" src=".\img\Image-03.jpg">  </div>
-      <div class="column-right">
-        <div class="up" style="border: 2px solid purple;">
-          <h2 class="comp_1_title">ANSWER YOWR BODY'S NEEDS</h2>
-          <hr>
-          <p class="paragraph1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et sunt quod quae placeat, odio rem ipsum similique nesciunt aperiam iure quidem ipsam omnis consequuntur ipsa iusto laudantium facere vitae accusantium
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, eveniet nulla aliquid maiores veritatis laudantium facilis </p>
-        </div>
-          <div class="down" style="border: 2px solid orange;">
-            <h3>BE MINDFUL</h3>
-            <p class="paragraph2"><strong >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit repudiandae obcaecati facilis nisi tempora. </strong></p>
+    <div class="div" style="border: 2px solid pink">
+      <h1>ALL THE LATEST FROM AEG</h1>
+      <div class="recipes">
+        <div class="card" style="border: 2px solid blue">
+          <img style="border-bottom: 4px solid red;" alt="Vue logo" src=".\img2\Image-01.jpg">
+          <div class="info1">
+            <h2>Summer Lunch Menu Mark Best</h2>
+          <p>AEG ambasssador Mark Best's summer eats are guarnteed to help you make the most of the warner amnd enteranting at home</p>
+          <a href="">READ MORE</a>
           </div>
+        </div>
+        <div class="card" style="border: 2px solid blue">
+          <img style="border-bottom: 4px solid red;" alt="Vue logo" src=".\img2\Image-02.jpg">
+          <div class="info">
+            <h2>A Traditional Chrismas Eve, Mark Best Style</h2>
+          <p>AEG ambasssador Mark Best's summer eats are guarnteed to help you make the most of the warner amnd enteranting at home</p>
+          <a href="">READ MORE</a>
+          </div>
+        </div>
+        <div class="card" style="border: 2px solid blue">
+          <img style="border-bottom: 4px solid red;" alt="Vue logo" src=".\img2\Image-03.jpg">
+          <div class="info">
+            <h2>Taking Taste Further</h2>
+          <p>AEG ambasssador Mark Best's summer eats are guarnteed to help you make the most of the warner amnd enteranting at home st of the warner amnd enteranting at home</p>
+          <a href="">READ MORE</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="div">
-      
-    </div>
+    
   </div>
 </template>
 
@@ -37,50 +48,39 @@ export default {
    background-color: #0e0e0e;
    padding: 130px 100px 100px 140px;
 }
-.three-columns {
-    display: flex;
-    justify-content: space-between; /* or use 'space-around' or 'space-evenly' for different spacing */
+h1{
+  font-size: 38px;
 }
-
-.column {
-    flex: 1; /* This makes each column take up equal space */
-    padding: 10px;
-    box-sizing: border-box; /* Ensures padding doesn’t affect the width */
-    border: 2px solid green;
+.recipes{
+  display: flex;
+ gap: 20px;
+ margin-top: 55px;
+}
+.card{
+  width: 100%;
 }
 
 h2{
-  font-size: 26px;
+  font-size: 18px;
 }
-
-.img3{
-  margin-top: 15px;
-}
-
-.down{
+.info1{
   text-align: left;
+  width: 87%;
+  margin-left: 9px;
 }
 
-h3{
-  font-size: 15px;
-  color: red;
-}
-.paragraph1, .paragraph2{
+.info{
   text-align: left;
-  font-size: 20px;
+  margin-left: 9px;
+}
+
+p{
+  color: gray;
   line-height: 1.5;
 }
 
-.column-right{
-  padding: 10px;
-    box-sizing: border-box;
-  border: 2px solid rgb(176, 21, 21);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+a{
+  color: white;
 }
 
-.comp_1_title{
-  width: 100%;
-}
 </style>
